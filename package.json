@@ -1,10 +1,14 @@
 {
   "name": "server-node",
   "version": "1.0.0",
+  "type": "module",
   "description": "Basic REST API Serber",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel ./src --out-dir ./build",
+    "start": "node ./build/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "lint": "eslint ."
   },
   "author": "Cheryl Lopez <clopez51@stu.southtexascollege.edu>",
   "license": "ISC",
@@ -22,6 +26,8 @@
     "@babel/core": "^7.23.2",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.23.2",
-    "@babel/runtime": "^7.23.2"
+    "@babel/runtime": "^7.23.2",
+    "bcrypt-nodejs": "^0.0.3",
+    "express": "^4.18.2"
   }
 }
